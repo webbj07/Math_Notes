@@ -1,0 +1,45 @@
+Goals:
+  document everything I currently know about math in a portable and readable format.
+  include information from calc 1, 2, 3, linear algebra, and differential equations.
+
+Format:
+  seperate things into different sections
+
+  Section Ideas:                                                Status: 
+    Foundations of Calculus:                                    
+      functions                                                 Not Started
+      roots                                                     Not Started
+      asymtotic behavior                                        Not Started
+      imaginary numbers                                         Not Started
+    Trig:                                                       
+      essential formulas                                        Not Started 
+      unit circle                                               Not Started
+
+    Limits
+      Evaluating limits (2D)                                    Not Started
+      Evaluating limits (Nth-D)                                 Not Started
+      integration as a limit using riemann sums                 Not Started
+      Differentiation as a limit                                Not Started
+    Differentiation                                          
+      Differentiation as a limit                                Not Started
+      differentiation using basic rules                         Not Started 
+    Integration                                                 
+      integration using basic rules (power rule, chain rule)    Not Started  
+      integration by substitution                               Not Started
+      integration by parts                                      Not Started
+      integration by partial fractions                          Not Started
+      integration by trig substitutions                         Not Started
+      double integrals                                          Not Started
+      triple integrals                                          Not Started
+      the jacobian and n dimensional integration                Not Started
+    Ordinary Differential Equations:
+      Types of ODEs and classifying them                        Not Started
+      First Order Seperable Equations                           Not Started
+      First Order Nonseperable Equations                        Not Started
+      Higher Order ODEs                                         Not Started
+    Matrix Algebra:
+      matricies and systems                                     Not Started
+      determinants and what they represent                      Not Started
+      inverses and solving matrix equations                     Not Started
+      vector spaces                                             Not Started
+      subspaces, nullspaces, subsets                            Not Started
