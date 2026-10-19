@@ -3,19 +3,43 @@
 \usepackage[pdftex]{graphicx}
 \usepackage[usenames,dvipsnames]{color}
 \usepackage{listings}
-\usepackage{courier}
 \usepackage{setspace}
 \usepackage{graphicx,float,wrapfig}
 \usepackage{pdfpages}
+\usepackage{caption}
+\usepackage{tabularx}
+\usepackage{multicol}
+\usepackage{array}
 
-\topmargin=-0.46in
-\evensidemargin=0in
-\oddsidemargin=0in
-\textwidth=6.6in
-\headsep=0.26in
-\headheight=12.0pt
+\usepackage[margin=0.25in]{geometry}
+\usepackage{pgfplots}
+\usepgfplotslibrary{external}
+\tikzexternalize
+\pgfplotsset{width=7cm,compat=1.18}
+
+% Force pdflatex for external figures
+% \tikzset{
+%     external/system call={pdflatex \tikzexternalcheckshellescape -shell-escape -halt-on-error -interaction=batchmode -jobname "\image" "\texsource"}
+% }
+
+\newcolumntype{Y}{>{\centering\arraybackslash}X}
+\geometry{
+    letterpaper, % or a4paper
+    top=1in,
+    bottom=1in,
+    left=1in,
+    right=1in,
+    headheight=15pt, % Ensure this is large enough for fancyhdr
+    headsep=25pt     % The gap between the header and the text
+}
+% \topmargin=-0.46in
+% \evensidemargin=0in
+% \oddsidemargin=0in
+% \textwidth=6.6in
+% \headsep=0.25in
+% \headheight=12.0pt
 \pagestyle{fancyplain}
-\linespread{1.3}
+\linespread{1.2}
 \sloppy
 \setlength{\parindent}{0pt}
 
@@ -27,9 +51,9 @@
 \setcounter{dbltopnumber}{3}
 \renewcommand{\dbltopfraction}{0.9}
 \renewcommand{\textfraction}{0.07}
-
+\renewcommand{\subsectionmark}[1]{\markright{#1}}
 \fancyhf{}
-\lhead{\fancyplain{}{\@author}}
-\rhead{\fancyplain{}{\today}}
+\lhead{\fancyplain{}{\leftmark}}
+\rhead{\fancyplain{}{\rightmark}}
 \rfoot{\fancyplain{}{\thepage}}
-\makeatother
+% \makeatother

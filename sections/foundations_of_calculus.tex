@@ -1,9 +1,102 @@
 \documentclass[../Math_Notes.tex]{subfiles}
 \graphicspath{{\subfix{../resources}}}
 \begin{document}
+This section covers topics in math that form the foundations of calculus.
 \subsection{Functions}
-\subsection{Roots}
-\subsection{Asymtotic Behavior}
+Functions in general are mathematical expressions that map one or more inputs to exactly one output. Take the example function $y=x^{2}$ or, equivalently, $f(x)=x^{2}$. This function takes some input x and multiplies it by itself. The graph of this function is shown in the figure below.
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+        axis lines = left,
+        xlabel = $x$,
+        ylabel = $y$,
+      ]
+      \addplot[color=blue]{x^2};
+    \end{axis}
+  \end{tikzpicture}
+\end{figure}\\
+By a combination of inspection and common sense, we can determine that this function is defined over all the real numbers. We can also see that this is a function through something called the \textbf{Vertical Line Test}. This test involves drawing an imaginary vertical line throught the function at any point and seeing if it crosses the function at more than one point. This process is shown below. 
+\begin{figure}[h]
+  \centering
+  \begin{tikzpicture}
+    \begin{axis}[
+        axis lines = left,
+        xlabel = $x$,
+        ylabel = $y$
+      ]
+      \addplot[color=blue]{x^2};
+      \draw[dashed, red] (axis cs:1,-2) -- (axis cs:1,25);
+    % \addplot[red, thick] (3,x);
+  \end{axis}
+  \end{tikzpicture}
+  \caption*{Repeat this for all x}
+\end{figure}\\
+Since $x^{2}$ passes this test it must be a function. Algebraically, this test is saying that the output equation must only contain integer powers of the input variable. From this, it is clear that \[y=x^{\frac{3}{2}}\] is not a function. The same logic applies to any general function.
+\subsubsection{Roots}
+The roots of a function are the input values that make the ouput function equal to zero. These input values are useful for many different reasons that will be covered later, but for now it is good enough to just find them. The most common situation where finding roots is useful is when dealing with polynomials. A general form polynomial looks like this:
+\[f(x) = a_{0}+a_{1}x+a_{2}x^{2}+...+a_{n}x^{n}\]
+So to find its roots, we must find values of x that make this function 0. Note that an nth degree polynomial can have at most n roots. Finding roots of polynomials of higher than the third degree is suprisingly very difficult without approximations using more advanced methods. Therefore this section will limit itself to only 1st-3rd degree polynomials. \\\\
+\textbf{First Degree} \\ 
+This is really very simple. For the general first degree polynomial:
+\(a_{1}x+C=0\), the root is simply
+\(x=-\frac{C}{a_{1}}\)\\
+
+\textbf{Second Degree} \\ 
+These polynomials are called quadratic polynomials. Their roots can be found using two methods, factoring or using the quadratic formula. The quadratic formula begins with a polynomial of the form
+\[ax^{2}+bx+c=0\]
+and creates the formula 
+\[x=\frac{-b\pm \sqrt{b^{2}-4ac}}{2a}\]
+Solving this formula for x in both the positive and negative cases gives the roots of the function.\\
+
+The same result can also be arrived at through factoring. Factoring begins with the idea that any 2nd degree polynomial can be created by multiplying two first degree polynomials together. Finding these factors and setting them equal to zero will give the roots of the function. This process is best split into two different sections: \\\\
+\begin{tabularx}{\textwidth}{Y|Y}
+  \(a=1\) & \(a\ne 1\) \\
+  \hline you must solve the following system for $n_{1}$ and $n_{2}$ & you must solve the following system for $n_{1}$ and $n_{2}$\\
+  \(n_{1}\cdot n_{2} = c\) & \(n_{1}\cdot n_{2} = ac\) \\ 
+  \(n_{1}+n_{2}=b\) & \(n_{1}+n_{2}=b\) \\
+  The roots will be $-n_{1}$ and $-n_{2}$ & replace $bx$ with $n_{1}x+ n_{2}x $ \\
+                                          & form the groups $(ax^{2}+n_{1}x)+(n_{2}x+c)$\\
+                                          & now remove common factors  \\
+                                          & \(n_{5}x(n_{3}x+n_{4})+n_{6}(n_{3}x+n_{4})\)\\ 
+                                          & now regroup \\
+                                          & \((n_{5}x+n_{6})\cdot(n_{3}x+n_{4})\)\\
+                                          & set these terms individually equal to zero and solve for x\\
+\end{tabularx}\\
+
+NOTE: it is possible to ignore the steps for $a\ne 1$ by dividing b and c by a before factoring.\\
+\textbf{Third Degree} \\ 
+The general form of a third degree polynomial looks like this:
+\[ax^{3}+bx^{2}+cx+d=0\]
+Finding the roots of third degree polynomials is much more complicated than finding the roots of second degree polynomials. There is technically a formula for them, but it is very complicated and it is generally easier to use factoring if a computer is not available. Factoring makes use of the following therom:
+\begin{figure}[htbp]
+  \centering
+If a polynomial $f(x)$ is divided by $(x-r)$ and a remainder $R$ is obtained, then $f(r)=R$
+\end{figure}\\
+We begin factoring by looking for a linear factor to divide the cubic by to make it quadratic. Since the above therom works in reverse, eqvaluating $f(x)$ using different factors of a. b, c and d allows us to find a linear factor with a remainder of zero quickly.\\ 
+Factoring has two main cases:
+\begin{itemize}
+  \item Factoring where grouping is simple
+    \begin{enumerate}
+      \item Form the groups $(ax^{3}+bx^{2}) + (cx+d)$
+      \item Remove common factors to get $n_{1}x^{2}(n_{3}x+n_{4})+n_{2}(n_{3}x+n_{4})$
+      \item Regroup into $(n_{1}x^{2}+ n_{2})\cdot (n_{3}x+n_{4})$
+      \item Set each individually equal to zero and solve for x
+    \end{enumerate}
+  \item Factoring where grouping is not simple
+    \begin{enumerate}
+      \item Start by noticing that when factoring, the factors always end up being some constant multiple of a, b, c, or d.
+      \item Start by testing small factors of a, b, c, or d untill the polynomial equals zero. We will call this number $n_{1}$.
+      \item divide the polynomial by $x-n_{1}$
+      \item factor the resulting quadratic using previously discussed methods
+      \item the factors are $n_{1}$ and the factors of the quadratic
+    \end{enumerate}
+\end{itemize}
+\subsubsection{Asymtotic Behavior}
+\clearpage
+\subsection{Systems of Equations}
+\clearpage
 \subsection{Imaginary Numbers}
+\clearpage
 \subsection{Miscelaneous Useful Formulas}
 \end{document}

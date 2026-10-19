@@ -2,33 +2,45 @@
 \usepackage{setup}
 
 \graphicspath{{resources/}}
-
 \usepackage{subfiles}
 
 \title{Math Notes}
 \author{Jack Webb}
+
 \begin{document}
 \maketitle
-\tableofcontents
 \pagebreak
+\pagenumbering{roman}
+\tableofcontents
+\clearpage
+\pagenumbering{arabic}
+
 \section{Foundations of Calculus}
-  \subfile{sections/foundations_of_calculus}
-  \pagebreak
+\subfile{sections/foundations_of_calculus}
+\clearpage
+
 \section{Trigonometry}
-  \subfile{sections/trigonometry}
-  \pagebreak
-\section{Limits}
-  \subfile{sections/limits}
-  \pagebreak
-\section{Differentiation}
-  \subfile{sections/differentiation}
-  \pagebreak
-\section{Integration}
-  \subfile{sections/integration}
-  \pagebreak
-\section{Differential Equations and Modeling}
-  \subfile{sections/differential_equations}
-  \pagebreak
+\subfile{sections/trigonometry}
+\clearpage
+
 \section{Matrix Algrbra}
-  \subfile{sections/matrix_algebra}
+\subfile{sections/matrix_algebra}
+\clearpage
+
+\section{Limits}
+\subfile{sections/limits}
+\clearpage
+
+\section{Differentiation}
+\subfile{sections/differentiation}
+\clearpage
+
+\section{Integration}
+\subfile{sections/integration}
+\clearpage
+
+\section{Differential Equations and Modeling}
+\subfile{sections/differential_equations}
+\clearpage
+
 \end{document}
